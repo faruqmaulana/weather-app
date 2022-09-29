@@ -42,6 +42,8 @@ export default Home;
 export const getServerSideProps: GetServerSideProps = async () => {
   const req = await fetch('https://geolocation-db.com/json/geoip.json');
   const userInfo = await req.json();
+  console.log('user info: ', userInfo);
+
   return {
     props: {
       userInfo,
