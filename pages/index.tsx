@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import type { GetServerSideProps } from 'next';
 import React, { useContext, useEffect } from 'react';
 import { CurrentConditionCard } from '../components/card/current-condition';
@@ -9,7 +10,6 @@ import { fetchForecast, fetchManyForecast } from '../utils/fetch';
 
 const Home = ({ userInfo }: { userInfo: UserInfo }) => {
   const context = useContext(AppContext);
-  const manyForecast = context?.forecast?.forecast.forecastday;
   useEffect(() => {
     (async () => {
       const data = await fetchForecast(userInfo.city);

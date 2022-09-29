@@ -1,6 +1,5 @@
 import { useContext, useState } from 'react';
 import { AppContext } from '../../context/appContextProvider';
-import { Search } from '../../types';
 import { fetchForecast } from '../../utils/fetch';
 import Turnstone from 'turnstone';
 import { Icon } from '@iconify/react';
@@ -74,7 +73,7 @@ export const Searchbar: React.FC = () => {
 
   const onBlur = () => setHasFocus(false);
   const onFocus = () => setHasFocus(true);
-  console.log(listbox);
+  console.log(listbox[0].data);
   return (
     <div className="dropdown relative flex flex-col items-center">
       <h1 className="font-bold text-3xl pt-10 pb-5 text-center">Weather APP</h1>

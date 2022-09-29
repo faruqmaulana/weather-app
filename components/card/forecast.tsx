@@ -1,7 +1,9 @@
+import Image from 'next/image';
 import React, { useContext } from 'react';
 import { AppContext } from '../../context/appContextProvider';
 import { epochToDate } from '../../utils/utils';
 import { fetchForecast } from '../../utils/fetch';
+
 export const Forecast: React.FC = () => {
   const context = useContext(AppContext);
   const manyForecast = context?.forecast?.forecast.forecastday;
@@ -34,7 +36,13 @@ export const Forecast: React.FC = () => {
                 <span className="block my-1">
                   {epochToDate(val.date_epoch)}
                 </span>
-                <img src={val.day.condition.icon} className="block w-8 h-8" />
+                <Image
+                  alt={val.date}
+                  src={'https:' + val.day.condition.icon}
+                  height={30}
+                  width={30}
+                  className="block w-8 h-8"
+                />
                 <span className="block my-1">{val.day.avgtemp_c} C&deg;</span>
               </div>
             ))}

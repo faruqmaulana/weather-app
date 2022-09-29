@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 export type UserInfo = {
   city: string;
   country_code: string;
