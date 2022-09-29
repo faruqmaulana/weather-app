@@ -16,7 +16,7 @@ export const fetchManyForecast = async (
   city: string
 ): Promise<CurrentCondition> => {
   const response = await fetch(
-    `http://api.weatherapi.com/v1/forecast.json?key=e559ee96eef54ce28c0171816222709&q=${city}&days=10&aqi=no&alerts=no`
+    `https://api.weatherapi.com/v1/forecast.json?key=e559ee96eef54ce28c0171816222709&q=${city}&days=10&aqi=no&alerts=no`
   );
   const res = await response.json();
 

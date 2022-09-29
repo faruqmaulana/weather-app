@@ -60,6 +60,7 @@ export type Forecastday = {
 export type CurrentCondition = {
   location: Location;
   forecast: Forecastday;
+  error?: any;
 };
 
 export type AdditionalInfoTypes = {
