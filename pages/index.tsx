@@ -14,7 +14,7 @@ const Home = () => {
         const lat = position.coords.latitude;
         const lon = position.coords.longitude;
         const req = await fetch(
-          `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=9e7ce5beecf56ed4241113636d91b216`
+          `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${process.env.NEXT_PUBLIC_OPENWEATHER_API_TOKEN}`
         );
         const userLocation = await req.json();
         const userCities = userLocation.name;

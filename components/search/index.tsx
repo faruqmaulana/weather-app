@@ -41,9 +41,9 @@ const listbox = [
     displayField: 'name',
     data: (query: any) =>
       fetch(
-        `https://api.weatherapi.com/v1/search.json?key=e559ee96eef54ce28c0171816222709&q=${encodeURIComponent(
-          query
-        )}`
+        `https://api.weatherapi.com/v1/search.json?key=${
+          process.env.NEXT_PUBLIC_WEATHERAPP_API_TOKEN
+        }&q=${encodeURIComponent(query)}`
       ).then((response) => response.json()),
     searchType: 'startswith',
   },
@@ -78,7 +78,6 @@ export const Searchbar: React.FC = () => {
           <Icon type="search" className="w-6 h-6" icon={searchIcon} />
         </span>
         <Turnstone
-          autoFocus={true}
           cancelButton={true}
           clearButton={true}
           debounceWait={250}
